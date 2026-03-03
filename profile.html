@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>User Profile</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Custom css link-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--Google fonts link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <style>
+            .profile-section {
+                padding-top: 120px;
+                min-height: 100vh;
+            }
+            .profile-container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 40px;
+                background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+            }
+            .profile-header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .profile-avatar {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                border: 4px solid var(--main-color);
+                margin-bottom: 20px;
+                object-fit: cover;
+            }
+            .profile-header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+            .profile-header p {
+                color: var(--main-color);
+                font-size: 1.2rem;
+            }
+            .profile-form {
+                display: grid;
+                gap: 20px;
+            }
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .form-group label {
+                font-weight: 600;
+                font-size: 1rem;
+                color: var(--main-color);
+            }
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 15px;
+                border-radius: 10px;
+                border: 2px solid transparent;
+                background: rgba(255,255,255,0.1);
+                color: #fff;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+            }
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                border-color: var(--main-color);
+                outline: none;
+                background: rgba(255,255,255,0.15);
+            }
+            .form-group select option {
+                background: var(--bg-color);
+                color: #fff;
+            }
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            .profile-stats {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                margin: 40px 0;
+            }
+            .stat-box {
+                background: rgba(180, 214, 235, 0.2);
+                padding: 25px;
+                border-radius: 15px;
+                text-align: center;
+            }
+            .stat-box h3 {
+                font-size: 2.5rem;
+                color: var(--main-color);
+                margin-bottom: 10px;
+            }
+            .stat-box p {
+                font-size: 1rem;
+                color: #fff;
+            }
+            .btn-save {
+                display: inline-block;
+                padding: 15px 50px;
+                background: var(--main-color);
+                color: var(--bg-color);
+                font-size: 1.1rem;
+                font-weight: 600;
+                border: 2px solid transparent;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 20px;
+            }
+            .btn-save:hover {
+                background: transparent;
+                border-color: var(--main-color);
+                color: var(--main-color);
+            }
+            .interests-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .interest-tag {
+                padding: 8px 16px;
+                background: rgba(180, 214, 235, 0.3);
+                border-radius: 20px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .interest-tag:hover,
+            .interest-tag.active {
+                background: var(--main-color);
+                color: var(--bg-color);
+            }
+            @media (max-width: 768px) {
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+                .profile-stats {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <div class="row-image">
+                    <img src="pictures/fish.png" alt="Logo">
+                </div>
+                <a href="home.html" class="logo"><span><b>Ocean</b></span></a>
+            </div>
+                <ul class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Table</a></li>  
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </header>
+
+        <section class="profile-section">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <img src="pictures/sea.png" alt="Profile Avatar" class="profile-avatar">
+                    <h1>Your Profile</h1>
+                    <p>Ocean Conservation Advocate</p>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <h3>12</h3>
+                        <p>Events Attended</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>48</h3>
+                        <p>Hours Volunteered</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>5</h3>
+                        <p>Beaches Cleaned</p>
+                    </div>
+                </div>
+
+                <form class="profile-form" action="#" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" name="location" placeholder="City, Country">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Experience Level</label>
+                        <select id="experience" name="experience">
+                            <option value="">Select your experience level</option>
+                            <option value="beginner">Beginner - New to conservation</option>
+                            <option value="intermediate">Intermediate - Some experience</option>
+                            <option value="advanced">Advanced - Experienced volunteer</option>
+                            <option value="expert">Expert - Professional/Researcher</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Areas of Interest</label>
+                        <div class="interests-container">
+                            <span class="interest-tag active">Beach Cleanup</span>
+                            <span class="interest-tag">Marine Research</span>
+                            <span class="interest-tag active">Coral Restoration</span>
+                            <span class="interest-tag">Wildlife Protection</span>
+                            <span class="interest-tag">Education & Outreach</span>
+                            <span class="interest-tag">Diving Programs</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bio">About You</label>
+                        <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself and why you're passionate about ocean conservation..."></textarea>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-save">Save Profile</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <p class="top"><a href="#top">Go to top</a></p>
+
+        <!--Footer section-->
+        <section class="footer">
+            <div class="footer-box">
+                <h3>Links</h3>
+                <a href="home.html">Home</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-box">
+                <h3>About us</h3>
+                <a href="pageEditor_ST1.html">PageEditor _ST1</a>
+                <a href="pageEditor_ST2.html">PageEditor _ST2</a>
+                <a href="pageEditor_ST3.html">PageEditor _ST3</a>
+                <a href="pageEditor_ST4.html">PageEditor _ST4</a>
+            </div>
+        </section>
+    </body>
+</html>

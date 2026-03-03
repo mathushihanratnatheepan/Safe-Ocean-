@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Future of Our Ocean - Content Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:400,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #F9F9F9;
+      color: #333333;
+      font-family: "Open Sans", sans-serif;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-family: "Montserrat", sans-serif;
+    }
+    a {
+      text-decoration: none;
+      color: #2E86C1;
+    }
+
+    /* Internal Navigation Menu */
+    .internal-nav {
+      background: transparent;
+      text-align: center;
+      padding: 10px 0;
+    }
+    .internal-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .internal-nav ul li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+    .internal-nav ul li a {
+      font-weight: bold;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+    .internal-nav ul li a:hover {
+      text-decoration: underline;
+      color: #117A65;
+    }
+
+    /* Banner Section */
+    .banner {
+      position: relative;
+      background: url('pictures/future.jpg') no-repeat center center/cover;
+      height: 400px;
+    }
+    .banner-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(46, 134, 193, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .banner-text h1 {
+      font-size: 3.5rem;
+      color: #FFFFFF;
+      margin: 0;
+    }
+    .banner-text h2 {
+      font-size: 2rem;
+      color: #FFFFFF;
+      margin: 10px 0;
+    }
+    .banner-text p {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .banner-lists {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 20px;
+    }
+    .banner-lists ul {
+      list-style: none;
+      padding: 0;
+    }
+    .banner-lists li {
+      font-size: 1rem;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    /* Challenges Section */
+    .challenges-section {
+      padding: 60px 20px;
+    }
+    .challenges-section h2 {
+      text-align: center;
+      color: #2E86C1;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .challenges-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .challenges-text {
+      flex: 1 1 500px;
+      background: #FFFFFF;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .challenges-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #2E86C1;
+    }
+    .challenges-text ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .challenges-text ul li {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .challenges-text hr {
+      border: 0;
+      border-top: 1px solid #DDDDDD;
+      margin: 20px 0;
+    }
+    .challenges-image {
+      flex: 0 1 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .challenges-image img {
+      width: 100%;
+      height: auto;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Innovations Section */
+    .innovations-section {
+      padding: 60px 20px;
+      background: #F0F8FF;
+    }
+    .innovations-section h2 {
+      text-align: center;
+      color: #2E86C1;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .innovation-block {
+      margin-bottom: 30px;
+      background: #FFFFFF;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .innovation-block:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .innovation-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .innovation-content .icon {
+      font-size: 3rem;
+      color: #2E86C1;
+      flex: 0 0 auto;
+    }
+    .innovation-content .text {
+      flex: 1 1 auto;
+    }
+    .innovation-content .text h3 {
+      font-size: 1.8rem;
+      color: #2E86C1;
+      margin-bottom: 10px;
+    }
+    .innovation-content .text p {
+      font-size: 1rem;
+    }
+    .innovation-image {
+      flex: 0 0 auto;
+      max-width: 300px;
+    }
+    .innovation-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Go to Top Button */
+    #goTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2E86C1;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    #goTop:hover {
+      background: #1B4F72;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+        <div class="row-image">
+            <img src="pictures/fish.png" alt="Logo">
+        </div>
+        <a href="home.html" class="logo"><span><b>Ocean</b></span></a>
+    </div>
+        <ul class="menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="table.html">Table</a></li>  
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>    
+        </ul>
+  </header>
+
+  <!-- Internal Navigation Menu -->
+  <nav class="internal-nav" style="padding-top: 40px;">
+    <ul>
+      <li><a href="#banner">Introduction</a></li>
+      <li><a href="#challenges">Current Challenges</a></li>
+      <li><a href="#innovations">Innovations</a></li>
+    </ul>
+  </nav>
+
+  <!-- Banner Section -->
+  <section id="banner" class="banner">
+    <div class="banner-overlay">
+      <div class="banner-text">
+        <h1>The Future of Our Ocean</h1>
+        <h2>Why It Matters and How We Can Protect It</h2>
+        <p>The ocean is the lifeblood of our planet, covering over 70% of Earth's surface and playing a crucial role in sustaining life.</p>
+      </div>
+      <!-- Optional bullet lists on the banner -->
+      <div class="banner-lists">
+        <ul>
+          <li>🌊 Importance of the Ocean</li>
+          <li>🌍 Regulates Climate</li>
+          <li>🐠 Supports Biodiversity</li>
+        </ul>
+        <ul>
+          <li>💨 Produces Oxygen</li>
+          <li>🏝️ Sustains Communities</li>
+          <li>🍽️ Provides Food</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges Section -->
+  <section id="challenges" class="challenges-section">
+    <h2>Current Challenges Facing Our Oceans</h2>
+    <div class="challenges-container">
+      <!-- Left side: All subsections A, B, C, D -->
+      <div class="challenges-text">
+        <h3>🌊 A. Climate Change & Rising Sea Levels</h3>
+        <ul>
+          <li>🌡️ Warmer ocean temperatures are causing coral bleaching.</li>
+          <li>🌪️ Increased frequency of storms is damaging marine ecosystems.</li>
+          <li>🧊 Melting polar ice caps are contributing to rising sea levels.</li>
+          <li>🦈 Disrupted marine ecosystems as fish migrate to cooler waters.</li>
+        </ul>
+        <hr>
+        <h3>🛍️ B. Plastic Pollution & Marine Debris</h3>
+        <ul>
+          <li>Over 8 million tons of plastic enter the ocean each year.</li>
+          <li>🐢 Marine animals mistake plastic for food, leading to harm.</li>
+          <li>🧪 Microplastics are found in sea salt, drinking water, and seafood.</li>
+          <li>♻️ Only 9% of plastic is recycled, with most ending in landfills or the ocean.</li>
+        </ul>
+        <hr>
+        <h3>🎣 C. Overfishing & Habitat Destruction</h3>
+        <ul>
+          <li>90% of global fish stocks are overfished.</li>
+          <li>💣 Destructive fishing methods are damaging coral reefs.</li>
+          <li>🐠 Bycatch leads to the death of millions of marine species.</li>
+          <li>🏝️ Coastal habitats are being lost due to urban expansion.</li>
+        </ul>
+        <hr>
+        <h3>🦠 D. Ocean Acidification & Loss of Marine Biodiversity</h3>
+        <ul>
+          <li>Higher CO₂ levels are making the ocean more acidic.</li>
+          <li>🦐 Acidification weakens corals and shellfish.</li>
+          <li>🦑 Declining plankton populations disrupt the marine food chain.</li>
+        </ul>
+      </div>
+      <!-- Right side: Challenges Image -->
+      <div class="challenges-image">
+        <img src="pictures/pacific.jpeg" alt="Current Challenges">
+      </div>
+    </div>
+  </section>
+
+  <!-- Innovations Section -->
+  <section id="innovations" class="innovations-section">
+    <h2>Technological Innovations for Ocean Conservation</h2>
+
+    <!-- 1st innovation block -->
+    <div class="innovation-block">
+      <div class="innovation-content">
+        <div class="icon">🤖</div>
+        <div class="text">
+          <h3>AI & Robotics for Ocean Cleanup</h3>
+          <p>Autonomous robots and AI-powered drones are transforming ocean cleanup efforts. They track and identify plastic waste, navigate complex marine environments, and collect debris efficiently. AI-powered drones also monitor pollution levels, helping scientists develop effective mitigation strategies.</p>
+        </div>
+        <div class="innovation-image">
+          <img src="pictures/underwater.jpeg" alt="AI & Robotics for Ocean Cleanup">
+        </div>
+      </div>
+    </div>
+
+    <!-- 2nd innovation block -->
+    <div class="innovation-block">
+      <div class="innovation-content">
+        <div class="icon">📡</div>
+        <div class="text">
+          <h3>Smart Fishing & Sustainable Aquaculture</h3>
+          <p>
+            Smart fishing harnesses satellite tracking and AI to regulate fishing activities, 
+            preventing overexploitation by providing real-time data to fisheries. Sustainable 
+            aquaculture systems reduce waste and minimize environmental impacts while 
+            maintaining a steady seafood supply.
+          </p>
+        </div>
+        <div class="innovation-image">
+          <img src="pictures/fishing.jpeg" alt="Smart Fishing & Sustainable Aquaculture">
+        </div>
+      </div>
+    </div>
+
+    <!-- 3rd innovation block -->
+    <div class="innovation-block">
+      <div class="innovation-content">
+        <div class="icon">🐚</div>
+        <div class="text">
+          <h3>Coral Reef Restoration & Marine Biotechnology</h3>
+          <p>Marine biotechnology is revolutionizing coral reef restoration with resilient coral species and artificial reef structures. Techniques like 3D printing create reef support frameworks, while bioengineered 'super corals' withstand higher temperatures and ocean acidification.</p>
+        </div>
+        <div class="innovation-image">
+          <img src="pictures/myreef.jpg" alt="Coral Reef Restoration & Marine Biotechnology">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="footer-box">
+        <h3>Links</h3>
+        <a href="home.html">Home</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="profile.html">Profile</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="sitemap.html">Sitemap</a>
+    </div>
+    <div class="footer-box">
+        <h3>About us</h3>
+        <a href="pageEditor_ST1.html">PageEditor _ST1</a>
+        <a href="pageEditor_ST2.html">PageEditor _ST2</a>
+        <a href="pageEditor_ST3.html">PageEditor _ST3</a>
+        <a href="pageEditor_ST4.html">PageEditor _ST4</a>
+    </div>
+  </section>
+
+  <!-- Go to Top Button -->
+  <button id="goTop">Go to Top</button>
+
+  <script>
+    document.getElementById('goTop').addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>

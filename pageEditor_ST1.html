@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Editor - Safe Ocean (Student 1)</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&family=Open+Sans:400,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Overall Styling Guidelines */
+    body {
+      background-color: #F9F9F9;
+      color: #333333;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2, h3, h4 {
+      font-family: "Montserrat", sans-serif;
+      margin: 20px 0 10px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #2E86C1;
+      text-align: center;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #333333;
+    }
+    h3 {
+      font-size: 1.4rem;
+      color: #2E86C1;
+    }
+    h4 {
+      font-size: 1.2rem;
+      color: #2E86C1;
+      margin-top: 15px;
+    }
+    a {
+      color: #2E86C1;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    a:hover {
+      color: #1B4F72;
+      text-decoration: underline;
+    }
+    /* Layout: Sidebar and Main Content */
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+    #sidebar {
+      flex: 1 1 20%;
+      max-width: 250px;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+    }
+    #main-content {
+      flex: 1 1 75%;
+      padding: 20px;
+    }
+    /* Sidebar Links */
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    #sidebar ul li {
+      margin-bottom: 10px;
+    }
+    /* Section Styles */
+    section {
+      margin-bottom: 40px;
+    }
+    /* Validation and Live Page Link Blocks */
+    .link-block {
+      margin-top: 10px;
+    }
+    .link-block a {
+      margin-right: 15px;
+    }
+    /* Additional Sections */
+    .section-content p {
+      margin: 10px 0;
+    }
+    /* Go to Top Button */
+    #goTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #2E86C1;
+      color: #FFFFFF;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    #goTop:hover {
+      background-color: #1B4F72;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      #container {
+        flex-direction: column;
+      }
+      #sidebar {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+    <header>
+      <div class="logo-container">
+          <div class="row-image">
+              <img src="pictures/fish.png" alt="Logo">
+          </div>
+          <a href="home.html" class="logo"><span><b>Ocean</b></span></a>
+      </div>
+          <ul class="menu">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="volunteer.html">Volunteer</a></li>
+              <li><a href="table.html">Table</a></li>  
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="feedback.html">Feedback</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="sitemap.html">Sitemap</a></li>    
+        </ul>
+    </header>
+
+  <!-- Content Overview with Sidebar -->
+  <div id="container" style="padding-top: 55px;">
+    <div id="sidebar">
+      <h2>Content Overview</h2>
+      <p>My name is Mathushihan.R and my role is Student 1.</p>
+      <ul>
+        <li><a href="#splash-section">Splash Screen</a></li>
+        <li><a href="#volunteer-section">Volunteer Page</a></li>
+        <li><a href="#content-section">Content Page</a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+      <!-- Splash Screen Section -->
+      <section id="splash-section">
+        <h2>Splash Screen</h2>
+        <h3>Technical Description</h3>
+        <div class="section-content">
+          <h4>HTML Techniques</h4>
+          <p>
+            The document begins with a proper HTML5 declaration and includes essential meta tags for charset, viewport, and an automatic redirection via a meta refresh (set to redirect after 4 seconds). Key content elements are grouped within a <code>&lt;div class="splash-screen"&gt;</code> that contains a prominent <code>&lt;h1&gt;</code> for the website title, a <code>&lt;p&gt;</code> for the mission statement, and additional <code>&lt;p&gt;</code> elements listing group members.
+          </p>
+          <h4>CSS Techniques</h4>
+          <p>
+            A full-screen background is achieved using the CSS background properties (e.g., <code>background: url(...) no-repeat center center fixed;</code> with <code>background-size: cover</code>), ensuring the image scales appropriately across devices. Flexbox is used to center the content both vertically and horizontally (<code>display: flex; flex-direction: column; justify-content: center; align-items: center;</code>). CSS animations via <code>@keyframes</code> (fadeIn, slideUp, and spin) create smooth transitions for text and a rotating loader, enhancing the user experience during the short splash duration.
+          </p>
+          <h4>Purpose &amp; Justification</h4>
+          <p>
+            The combination of semantic HTML and dynamic CSS provides users with an engaging first impression, immediately communicates your site's mission, and smoothly transitions them to the Home page—all while maintaining a responsive design.
+          </p>
+          <h4>Accessibility</h4>
+          <p>
+            This splash screen uses semantic HTML elements like <code>&lt;h1&gt;</code> for the main heading and <code>&lt;p&gt;</code> for descriptive text, which improves readability for screen readers. The use of em for font sizes enhances accessibility by supporting text scaling. The viewport meta tag ensures responsiveness across devices, and the high contrast between the white text and darkened background improves visibility. However, accessibility can be further improved by adding <code>role="banner"</code> to the splash screen, using <code>aria-label="Loading..."</code> for the loader, and including skip links for better navigation. Additionally, providing a way to bypass the splash screen, like a skip button, would enhance user experience.
+          </p>
+        </div>
+        <div class="link-block">
+          <a href="validation_ST1.html#splash-validation" target="_blank">View Splash Screen Validation</a>
+          <a href="Splash.html" target="_blank">Open Splash Screen</a>
+        </div>
+      </section>
+
+      <!-- Volunteer Page Section -->
+      <section id="volunteer-section">
+        <h2>Volunteer Page</h2>
+        <h3>Technical Description</h3>
+        <div class="section-content">
+          <h4>HTML Techniques</h4>
+          <p>
+            The header features a well-structured navigation bar using semantic tags such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, and an unordered list (<code>&lt;ul&gt;</code>) to list menu items. The main content is divided into clear sections: one for volunteering opportunities, another for user reviews, and a section for a feedback form—all wrapped in <code>&lt;section&gt;</code> elements to enhance readability and accessibility. Each volunteer opportunity is presented as a 'card' (using a <code>&lt;div class="card"&gt;</code>), which includes images, icons (via Font Awesome), headings, descriptive text, and detailed information structured within sub-elements.
+          </p>
+          <h4>CSS Techniques</h4>
+          <p>
+            A CSS Grid layout is used to display volunteer cards in a responsive grid (<code>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));</code>), ensuring cards adapt to various screen sizes. Hover effects and transitions (e.g., scaling the card with <code>transform: scale(1.05);</code> and adjusting <code>box-shadow</code>) add interactivity and visual feedback for clickable elements. Consistent typography, spacing, and a subtle color palette (with contrasting button colors) help maintain a clear visual hierarchy and an appealing, user-friendly interface.
+          </p>
+          <h4>Purpose &amp; Justification</h4>
+          <p>
+            The structured layout and interactive design encourage users to explore volunteering opportunities, read reviews, and submit feedback. The use of semantic elements and responsive CSS supports both usability and the site's overarching mission of marine conservation.
+          </p>
+          <h4>Accessibility</h4>
+          <p>
+            Accessibility is addressed through the use of semantic HTML elements like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;main&gt;</code>, which enhance readability for screen readers and improve content structure. The responsive grid layout ensures the website remains usable across various screen sizes, enhancing accessibility for users on different devices. Proper color contrast between text and backgrounds ensures readability for visually impaired users, while interactive elements like buttons and links are styled with clear hover and focus states for better keyboard navigation. Additionally, the use of aria-labels and role attributes where necessary provides further support for assistive technologies, promoting an inclusive and user-friendly experience.
+          </p>
+        </div>
+        <div class="link-block">
+          <a href="validation_ST1.html#volunteer-validation" target="_blank">View Volunteer Page Validation</a>
+          <a href="volunteer.html" target="_blank">Open Volunteer Page</a>
+        </div>
+      </section>
+
+      <!-- Content Page Section -->
+      <section id="content-section">
+        <h2>Content Page</h2>
+        <h3>Technical Description</h3>
+        <div class="section-content">
+          <h4>HTML Techniques</h4>
+          <p>
+            The page utilizes semantic HTML elements like <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, and proper heading tags (<code>&lt;h1&gt;</code>–<code>&lt;h3&gt;</code>) to divide long content into clear, manageable sections. An internal navigation menu (constructed with anchor links) allows users to jump directly to sections such as Introduction, Challenges, and Innovations, improving content accessibility. A visually striking banner with overlay text immediately captures attention, while the inclusion of a 'Go to Top' button (a fixed-position element) aids user navigation through extensive content.
+          </p>
+          <h4>CSS Techniques</h4>
+          <p>
+            The banner is styled with a background image and a semi-transparent overlay, ensuring that the overlaid text is legible while maintaining aesthetic appeal. Responsive design is implemented using flexible layouts (combining CSS Flexbox and Grid) to ensure that text and images adjust smoothly across devices. Additional CSS properties like <code>scroll-behavior: smooth;</code> enhance navigation, while the fixed 'Go to Top' button remains accessible at all times.
+          </p>
+          <h4>Purpose &amp; Justification</h4>
+          <p>
+            This page is designed to present detailed content in an organized and engaging format. By leveraging semantic HTML and modern CSS layout techniques, the page remains user-friendly and accessible, even as it conveys extensive information on ocean conservation topics.
+          </p>
+          <h4>Accessibility</h4>
+          <p>
+            Accessibility is prioritized by using semantic HTML elements like <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, and proper heading hierarchy (<code>&lt;h1&gt;</code> to <code>&lt;h3&gt;</code>) to structure the content clearly for screen readers. The internal navigation menu, built with anchor links, allows users with assistive technologies to quickly jump to specific sections, enhancing usability. High-contrast text overlays on banners improve readability for visually impaired users, while the responsive design ensures accessibility across various devices. Additionally, the smooth scrolling feature (<code>scroll-behavior: smooth;</code>) provides a better experience for keyboard and screen reader users, and the fixed 'Go to Top' button enhances navigation by providing an easy way to return to the beginning of the page.
+          </p>
+        </div>
+        <div class="link-block">
+          <a href="validation_ST1.html#content-validation" target="_blank">View Content Page Validation</a>
+          <a href="content_ST1.html" target="_blank">Open Content Page</a>
+        </div>
+      </section>
+
+      <!-- Additional Sections -->
+      <section id="challenges">
+        <h2>Challenges and Lessons Learned</h2>
+        <div class="section-content">
+          <p><strong>Layout Consistency:</strong> Coordinating the design between different pages—especially integrating unique elements like animated loaders and interactive cards—required close collaboration and thorough testing. We resolved this by standardizing our approach using a shared Global CSS file and modular components.</p>
+          <p><strong>Responsive Design and Cross-Browser Compatibility:</strong> Ensuring that the pages rendered well across different devices and browsers was initially challenging. We addressed this by leveraging CSS Flexbox, Grid layouts, and media queries, followed by rigorous testing on multiple platforms.</p>
+          <p><strong>Interactive Element Debugging:</strong> Implementing features such as the meta refresh redirect and CSS animations required careful debugging. Through iterative testing and code review, we refined the animations and interactivity to function seamlessly.</p>
+          <p><strong>Lessons Learned:</strong><br>
+            - The importance of planning and consistent coding practices cannot be overstated.<br>
+            - Collaborative problem-solving and detailed code documentation help streamline the debugging process.<br>
+            - Continuous testing and feedback lead to improvements in both design and functionality.
+          </p>
+        </div>
+      </section>
+
+      <section id="compliance">
+        <h2>Compliance</h2>
+        <div class="section-content">
+          <p>Our web pages adhere strictly to Janet regulations governing web page publication:</p>
+          <p><strong>Code Validation:</strong> All HTML and CSS are thoroughly validated using industry-standard tools, ensuring error-free and well-structured code.</p>
+          <p><strong>Best Practices:</strong> We follow best practices for accessibility and semantic markup, complying with current web standards and regulatory requirements.</p>
+          <p><strong>Documentation and Commenting:</strong> Detailed code comments and documentation help maintain clarity and accountability, ensuring that every section of the website meets the required guidelines.</p>
+          <p><strong>Realistic Approach:</strong> By addressing development challenges transparently and applying lessons learned, we have ensured that our pages are not only functional and aesthetically pleasing but also fully compliant with publication regulations.</p>
+        </div>
+      </section>
+
+      <section id="references">
+        <h2>References</h2>
+        <div class="section-content">
+          <ul>
+            <li>Duckett, J. (2011). <em>HTML and CSS: Design and Build Websites.</em> John Wiley &amp; Sons. Inc. Indianapolis.</li>
+            <li>W3C. (2025). <em>Web Content Accessibility Guidelines (WCAG) Overview.</em> Available at: <a href="https://www.w3.org/WAI/standards-guidelines/wcag/" target="_blank">https://www.w3.org/WAI/standards-guidelines/wcag/</a> (Last accessed: 10 Mar 2025).</li>
+            <li>Mozilla Developer Network (MDN). (2025). <em>HTML Reference.</em> Available at: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTML/Reference</a> (Last accessed: 10 Mar 2025).</li>
+            <li>Font Awesome. (2025). <em>Font Awesome Icons.</em> Available at: <a href="https://fontawesome.com/" target="_blank">https://fontawesome.com/</a> (Last accessed: 10 Mar 2025).</li>
+            <li>iStock. (2025). <em>iStock Images.</em> Available at: <a href="https://www.istockphoto.com/" target="_blank">https://www.istockphoto.com/</a> (Last accessed: 10 Mar 2025).</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="footer">
+    <div class="footer-box">
+        <h3>Links</h3>
+        <a href="home.html">Home</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="profile.html">Profile</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="sitemap.html">Sitemap</a>
+    </div>
+    <div class="footer-box">
+        <h3>Page Editors</h3>
+        <a href="pageEditor_ST1.html">PageEditor_ST1</a>
+        <a href="pageEditor_ST2.html">PageEditor_ST2</a>
+        <a href="pageEditor_ST3.html">PageEditor_ST3</a>
+        <a href="pageEditor_ST4.html">PageEditor_ST4</a>
+    </div>
+  </section>    
+
+  <!-- Go to Top Button -->
+  <a id="goTop" href="#top">Go to Top</a>
+</body>
+</html>

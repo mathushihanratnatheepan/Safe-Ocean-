@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Feedback</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Custom css link-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--Google fonts link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <style>
+            .feedback-section {
+                padding-top: 120px;
+                min-height: 100vh;
+            }
+            .feedback-container {
+                max-width: 1100px;
+                margin: 0 auto;
+                padding: 40px;
+            }
+            .feedback-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            .feedback-header h1 {
+                font-size: 3rem;
+                margin-bottom: 15px;
+            }
+            .feedback-header p {
+                font-size: 1.2rem;
+                color: rgba(255,255,255,0.8);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .feedback-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+                align-items: start;
+            }
+            .contact-info {
+                background: linear-gradient(135deg, rgba(180, 214, 235, 0.2), rgba(180, 214, 235, 0.1));
+                padding: 40px;
+                border-radius: 20px;
+            }
+            .contact-info h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+                color: var(--main-color);
+            }
+            .contact-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                background: var(--main-color);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                flex-shrink: 0;
+            }
+            .contact-details h3 {
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+            }
+            .contact-details p {
+                color: rgba(255,255,255,0.7);
+                font-size: 0.95rem;
+            }
+            .feedback-form {
+                background: rgba(255,255,255,0.05);
+                padding: 40px;
+                border-radius: 20px;
+                border: 1px solid rgba(180, 214, 235, 0.2);
+            }
+            .feedback-form h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            .form-group {
+                margin-bottom: 20px;
+            }
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: var(--main-color);
+            }
+            .form-group input,
+            .form-group textarea,
+            .form-group select {
+                width: 100%;
+                padding: 15px;
+                border-radius: 10px;
+                border: 2px solid transparent;
+                background: rgba(255,255,255,0.1);
+                color: #fff;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                box-sizing: border-box;
+            }
+            .form-group input:focus,
+            .form-group textarea:focus,
+            .form-group select:focus {
+                border-color: var(--main-color);
+                outline: none;
+            }
+            .form-group select option {
+                background: var(--bg-color);
+            }
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            .rating-group {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .rating-group input[type="radio"] {
+                display: none;
+            }
+            .rating-group label {
+                width: 45px;
+                height: 45px;
+                background: rgba(255,255,255,0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-size: 1.2rem;
+            }
+            .rating-group input[type="radio"]:checked + label,
+            .rating-group label:hover {
+                background: var(--main-color);
+                color: var(--bg-color);
+            }
+            .btn-submit {
+                width: 100%;
+                padding: 15px;
+                background: var(--main-color);
+                color: var(--bg-color);
+                font-size: 1.1rem;
+                font-weight: 600;
+                border: 2px solid transparent;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 10px;
+            }
+            .btn-submit:hover {
+                background: transparent;
+                border-color: var(--main-color);
+                color: var(--main-color);
+            }
+            .faq-section {
+                margin-top: 60px;
+            }
+            .faq-section h2 {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            .faq-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .faq-item {
+                background: rgba(255,255,255,0.05);
+                padding: 25px;
+                border-radius: 15px;
+                border-left: 4px solid var(--main-color);
+            }
+            .faq-item h3 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+                color: var(--main-color);
+            }
+            .faq-item p {
+                color: rgba(255,255,255,0.8);
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            @media (max-width: 900px) {
+                .feedback-content {
+                    grid-template-columns: 1fr;
+                }
+                .faq-grid {
+                    grid-template-columns: 1fr;
+                }
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <div class="row-image">
+                    <img src="pictures/fish.png" alt="Logo">
+                </div>
+                <a href="home.html" class="logo"><span><b>Ocean</b></span></a>
+            </div>
+                <ul class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Table</a></li>  
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </header>
+
+        <section class="feedback-section">
+            <div class="feedback-container">
+                <div class="feedback-header">
+                    <h1>We'd Love Your Feedback</h1>
+                    <p>Help us improve our ocean conservation efforts by sharing your thoughts and suggestions</p>
+                </div>
+
+                <div class="feedback-content">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>Our Location</h3>
+                                <p>Ocean Conservation Center<br>123 Marine Drive, Coastal City</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>info@oceanconservation.org<br>volunteer@oceanconservation.org</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h3>Call Us</h3>
+                                <p>+1 (555) 123-4567<br>Mon - Fri: 9am - 6pm</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">🌐</div>
+                            <div class="contact-details">
+                                <h3>Follow Us</h3>
+                                <p>@OceanConservation on all platforms</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-form">
+                        <h2>Send Us a Message</h2>
+                        <form action="#" method="post">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name *</label>
+                                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Your Email *</label>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="volunteer">Volunteering Questions</option>
+                                    <option value="feedback">Website Feedback</option>
+                                    <option value="suggestion">Suggestions</option>
+                                    <option value="complaint">Report an Issue</option>
+                                    <option value="partnership">Partnership Opportunities</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Rate Your Experience</label>
+                                <div class="rating-group">
+                                    <input type="radio" id="rate1" name="rating" value="1">
+                                    <label for="rate1">1</label>
+                                    <input type="radio" id="rate2" name="rating" value="2">
+                                    <label for="rate2">2</label>
+                                    <input type="radio" id="rate3" name="rating" value="3">
+                                    <label for="rate3">3</label>
+                                    <input type="radio" id="rate4" name="rating" value="4">
+                                    <label for="rate4">4</label>
+                                    <input type="radio" id="rate5" name="rating" value="5">
+                                    <label for="rate5">5</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Share your thoughts, suggestions, or questions..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h3>How can I become a volunteer?</h3>
+                            <p>Visit our Volunteer page and fill out the application form. Our team will contact you within 48 hours with available opportunities.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Do I need experience to volunteer?</h3>
+                            <p>No experience is necessary! We provide training for all our programs. Your enthusiasm for ocean conservation is what matters most.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Can I donate to support your cause?</h3>
+                            <p>Yes! We accept donations through various channels. Contact us for more information on how you can financially support our conservation efforts.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How do I report marine pollution?</h3>
+                            <p>Use the feedback form above with "Report an Issue" selected, or email us directly at report@oceanconservation.org with location details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="top"><a href="#top">Go to top</a></p>
+
+        <!--Footer section-->
+        <section class="footer">
+            <div class="footer-box">
+                <h3>Links</h3>
+                <a href="home.html">Home</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-box">
+                <h3>About us</h3>
+                <a href="pageEditor_ST1.html">PageEditor _ST1</a>
+                <a href="pageEditor_ST2.html">PageEditor _ST2</a>
+                <a href="pageEditor_ST3.html">PageEditor _ST3</a>
+                <a href="pageEditor_ST4.html">PageEditor _ST4</a>
+            </div>
+        </section>
+    </body>
+</html>

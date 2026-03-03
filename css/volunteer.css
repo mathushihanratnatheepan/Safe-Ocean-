@@ -1,0 +1,263 @@
+body {
+    background-color: #F9F9F9;
+    color: #333333;
+    font-family: "Open Sans", serif;
+}
+
+.volunteer {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.volunteer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.volunteer p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+#sort-by {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+    font-size: 3rem;
+    color: #2E86C1;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 5px 10px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: contents;
+}
+
+.detail-item .label {
+    font-weight: bold;
+    color: #333333;
+}
+
+.detail-item .value {
+    color: #333333;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.view-btn, .apply-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-right: 10px;
+}
+
+.view-btn {
+    background: #2E86C1;
+    color: white;
+}
+
+.apply-btn {
+    background: #117A65;
+    color: white;
+}
+
+.view-btn:hover {
+    background: #1B4F72;
+}
+
+.apply-btn:hover {
+    background: #0B5345;
+}
+
+.reviews {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.review-summary {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.review-summary .rating {
+    font-size: 2rem;
+    color: #2E86C1;
+    font-family: "Montserrat", sans-serif;
+}
+
+.review-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.review-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.review-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.review-card p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.review-card a {
+    color: #2E86C1;
+    text-decoration: none;
+}
+
+.feedback-form {
+    padding: 30px 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    background: #DDDDDD;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.feedback-form p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.feedback-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.emoji-rating {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.emoji-rating span {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-btn {
+    background: #2E86C1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cancel-btn {
+    background: #777777;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #1B4F72;
+}
+
+.cancel-btn:hover {
+    background: #555555;
+}

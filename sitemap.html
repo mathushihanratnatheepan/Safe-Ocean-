@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sitemap</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Custom css link-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--Google fonts link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <style>
+            .sitemap-section {
+                padding-top: 120px;
+                min-height: 100vh;
+            }
+            .sitemap-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 40px;
+            }
+            .sitemap-header {
+                text-align: center;
+                margin-bottom: 60px;
+            }
+            .sitemap-header h1 {
+                font-size: 3.5rem;
+                margin-bottom: 20px;
+            }
+            .sitemap-header p {
+                font-size: 1.2rem;
+                color: rgba(255,255,255,0.8);
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .sitemap-content {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            .sitemap-category {
+                background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+                border-radius: 20px;
+                padding: 30px;
+                border: 1px solid rgba(180, 214, 235, 0.2);
+                transition: all 0.3s ease;
+            }
+            .sitemap-category:hover {
+                border-color: var(--main-color);
+                transform: translateY(-5px);
+            }
+            .sitemap-category h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                color: var(--main-color);
+                padding-bottom: 15px;
+                border-bottom: 2px solid rgba(180, 214, 235, 0.3);
+            }
+            .sitemap-category ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .sitemap-category li {
+                margin-bottom: 12px;
+            }
+            .sitemap-category a {
+                color: rgba(255,255,255,0.9);
+                text-decoration: none;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 15px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            .sitemap-category a:hover {
+                background: rgba(180, 214, 235, 0.2);
+                color: var(--main-color);
+                transform: translateX(5px);
+            }
+            .sitemap-category a::before {
+                content: "→";
+                color: var(--main-color);
+                font-weight: bold;
+            }
+            .page-description {
+                font-size: 0.85rem;
+                color: rgba(255,255,255,0.6);
+                margin-left: 25px;
+                margin-top: -8px;
+                margin-bottom: 10px;
+            }
+            .visual-map {
+                margin-top: 60px;
+                background: rgba(0,0,0,0.3);
+                padding: 40px;
+                border-radius: 20px;
+            }
+            .visual-map h2 {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 40px;
+                color: var(--main-color);
+            }
+            .tree-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .tree-root {
+                background: var(--main-color);
+                color: var(--bg-color);
+                padding: 15px 40px;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+            .tree-line {
+                width: 2px;
+                height: 30px;
+                background: var(--main-color);
+            }
+            .tree-branches {
+                display: flex;
+                gap: 20px;
+                position: relative;
+            }
+            .tree-branches::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                height: 2px;
+                background: var(--main-color);
+            }
+            .tree-branch {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .tree-branch-line {
+                width: 2px;
+                height: 20px;
+                background: var(--main-color);
+            }
+            .tree-node {
+                background: rgba(180, 214, 235, 0.2);
+                padding: 12px 20px;
+                border-radius: 8px;
+                font-size: 0.9rem;
+                border: 1px solid var(--main-color);
+                text-align: center;
+                min-width: 120px;
+            }
+            .tree-node a {
+                color: #fff;
+                text-decoration: none;
+            }
+            .tree-node a:hover {
+                color: var(--main-color);
+            }
+            @media (max-width: 900px) {
+                .sitemap-content {
+                    grid-template-columns: 1fr;
+                }
+                .tree-branches {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .sitemap-header h1 {
+                    font-size: 2.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <div class="row-image">
+                    <img src="pictures/fish.png" alt="Logo">
+                </div>
+                <a href="home.html" class="logo"><span><b>Ocean</b></span></a>
+            </div>
+                <ul class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Table</a></li>  
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </header>
+
+        <section class="sitemap-section">
+            <div class="sitemap-container">
+                <div class="sitemap-header">
+                    <h1>Site Map</h1>
+                    <p>A complete overview of all pages on our Ocean Conservation website</p>
+                </div>
+
+                <div class="sitemap-content">
+                    <!-- Main Pages -->
+                    <div class="sitemap-category">
+                        <h2>🏠 Main Pages</h2>
+                        <ul>
+                            <li>
+                                <a href="home.html">Home</a>
+                                <p class="page-description">Main landing page with overview of marine biodiversity</p>
+                            </li>
+                            <li>
+                                <a href="volunteer.html">Volunteer</a>
+                                <p class="page-description">Volunteering opportunities and programs</p>
+                            </li>
+                            <li>
+                                <a href="table.html">Table</a>
+                                <p class="page-description">Water pollution analysis data</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Content Pages -->
+                    <div class="sitemap-category">
+                        <h2>📚 Content Pages</h2>
+                        <ul>
+                            <li>
+                                <a href="content_ST1.html">Future of Our Oceans</a>
+                                <p class="page-description">Exploring future challenges and opportunities</p>
+                            </li>
+                            <li>
+                                <a href="content_ST2.html">Conservation & Solutions</a>
+                                <p class="page-description">Conservation efforts and sustainable practices</p>
+                            </li>
+                            <li>
+                                <a href="content_ST3.html">Corals & Invertebrates</a>
+                                <p class="page-description">Marine invertebrates and coral ecosystems</p>
+                            </li>
+                            <li>
+                                <a href="content_ST4.html">Plastic Pollution</a>
+                                <p class="page-description">Impact of plastic on marine life</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- User Pages -->
+                    <div class="sitemap-category">
+                        <h2>👤 User Pages</h2>
+                        <ul>
+                            <li>
+                                <a href="profile.html">Profile</a>
+                                <p class="page-description">User profile and preferences</p>
+                            </li>
+                            <li>
+                                <a href="feedback.html">Feedback</a>
+                                <p class="page-description">Contact form and FAQ</p>
+                            </li>
+                            <li>
+                                <a href="team.html">Team</a>
+                                <p class="page-description">Meet our development team</p>
+                            </li>
+                            <li>
+                                <a href="sitemap.html">Sitemap</a>
+                                <p class="page-description">Site navigation overview (this page)</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Page Editors -->
+                    <div class="sitemap-category">
+                        <h2>📝 Page Editors</h2>
+                        <ul>
+                            <li>
+                                <a href="pageEditor_ST1.html">Page Editor - Student 1</a>
+                                <p class="page-description">Technical documentation by Mathushihan</p>
+                            </li>
+                            <li>
+                                <a href="pageEditor_ST2.html">Page Editor - Student 2</a>
+                                <p class="page-description">Technical documentation by Medhushiny</p>
+                            </li>
+                            <li>
+                                <a href="pageEditor_ST3.html">Page Editor - Student 3</a>
+                                <p class="page-description">Technical documentation by Sanuja</p>
+                            </li>
+                            <li>
+                                <a href="pageEditor_ST4.html">Page Editor - Student 4</a>
+                                <p class="page-description">Technical documentation by Azeem</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Validation Pages -->
+                    <div class="sitemap-category">
+                        <h2>✅ Validation Pages</h2>
+                        <ul>
+                            <li>
+                                <a href="validation_ST1.html">Validation - Student 1</a>
+                                <p class="page-description">HTML/CSS validation reports</p>
+                            </li>
+                            <li>
+                                <a href="validation_ST2.html">Validation - Student 2</a>
+                                <p class="page-description">HTML/CSS validation reports</p>
+                            </li>
+                            <li>
+                                <a href="validation_ST3.html">Validation - Student 3</a>
+                                <p class="page-description">HTML/CSS validation reports</p>
+                            </li>
+                            <li>
+                                <a href="validation_ST4.html">Validation - Student 4</a>
+                                <p class="page-description">HTML/CSS validation reports</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Special Pages -->
+                    <div class="sitemap-category">
+                        <h2>✨ Special Pages</h2>
+                        <ul>
+                            <li>
+                                <a href="Splash.html">Splash Screen</a>
+                                <p class="page-description">Loading screen with mission statement</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Visual Site Map -->
+                <div class="visual-map">
+                    <h2>Visual Site Structure</h2>
+                    <div class="tree-container">
+                        <div class="tree-root">🐟 Ocean Conservation</div>
+                        <div class="tree-line"></div>
+                        <div class="tree-branches">
+                            <div class="tree-branch">
+                                <div class="tree-branch-line"></div>
+                                <div class="tree-node"><a href="home.html">Home</a></div>
+                            </div>
+                            <div class="tree-branch">
+                                <div class="tree-branch-line"></div>
+                                <div class="tree-node"><a href="volunteer.html">Volunteer</a></div>
+                            </div>
+                            <div class="tree-branch">
+                                <div class="tree-branch-line"></div>
+                                <div class="tree-node"><a href="table.html">Table</a></div>
+                            </div>
+                            <div class="tree-branch">
+                                <div class="tree-branch-line"></div>
+                                <div class="tree-node"><a href="profile.html">Profile</a></div>
+                            </div>
+                            <div class="tree-branch">
+                                <div class="tree-branch-line"></div>
+                                <div class="tree-node"><a href="feedback.html">Feedback</a></div>
+                            </div>
+                            <div class="tree-branch">
+                                <div class="tree-branch-line"></div>
+                                <div class="tree-node"><a href="team.html">Team</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="top"><a href="#top">Go to top</a></p>
+
+        <!--Footer section-->
+        <section class="footer">
+            <div class="footer-box">
+                <h3>Links</h3>
+                <a href="home.html">Home</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-box">
+                <h3>About us</h3>
+                <a href="pageEditor_ST1.html">PageEditor _ST1</a>
+                <a href="pageEditor_ST2.html">PageEditor _ST2</a>
+                <a href="pageEditor_ST3.html">PageEditor _ST3</a>
+                <a href="pageEditor_ST4.html">PageEditor _ST4</a>
+            </div>
+        </section>
+    </body>
+</html>

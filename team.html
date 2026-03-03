@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Our Team</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Custom css link-->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--Google fonts link-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+        <style>
+            .team-section {
+                padding-top: 120px;
+                min-height: 100vh;
+            }
+            .team-header {
+                text-align: center;
+                margin-bottom: 60px;
+                padding: 0 20px;
+            }
+            .team-header h1 {
+                font-size: 3.5rem;
+                margin-bottom: 20px;
+            }
+            .team-header p {
+                font-size: 1.2rem;
+                color: rgba(255,255,255,0.8);
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.8;
+            }
+            .team-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 40px;
+            }
+            .team-card {
+                background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+                border-radius: 20px;
+                padding: 30px;
+                text-align: center;
+                transition: all 0.4s ease;
+                border: 1px solid rgba(180, 214, 235, 0.2);
+            }
+            .team-card:hover {
+                transform: translateY(-10px);
+                border-color: var(--main-color);
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            }
+            .team-avatar {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                margin: 0 auto 20px;
+                border: 4px solid var(--main-color);
+                overflow: hidden;
+                background: rgba(180, 214, 235, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 3rem;
+            }
+            .team-avatar img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .team-card h3 {
+                font-size: 1.4rem;
+                margin-bottom: 5px;
+                color: #fff;
+            }
+            .team-card .role {
+                color: var(--main-color);
+                font-size: 0.95rem;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+            .team-card .student-id {
+                color: rgba(255,255,255,0.6);
+                font-size: 0.85rem;
+                margin-bottom: 15px;
+            }
+            .team-card p {
+                color: rgba(255,255,255,0.7);
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            .pages-worked {
+                background: rgba(0,0,0,0.2);
+                padding: 15px;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+            .pages-worked h4 {
+                font-size: 0.85rem;
+                color: var(--main-color);
+                margin-bottom: 10px;
+            }
+            .pages-worked ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .pages-worked li {
+                font-size: 0.85rem;
+                color: rgba(255,255,255,0.8);
+                padding: 5px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .pages-worked li:last-child {
+                border-bottom: none;
+            }
+            .pages-worked a {
+                color: rgba(255,255,255,0.8);
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            .pages-worked a:hover {
+                color: var(--main-color);
+            }
+            .group-info {
+                max-width: 1200px;
+                margin: 60px auto 0;
+                padding: 40px;
+                background: linear-gradient(135deg, rgba(180, 214, 235, 0.15), rgba(180, 214, 235, 0.05));
+                border-radius: 20px;
+            }
+            .group-info h2 {
+                text-align: center;
+                font-size: 2rem;
+                margin-bottom: 30px;
+                color: var(--main-color);
+            }
+            .group-details {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                text-align: center;
+            }
+            .group-detail-item h3 {
+                font-size: 1rem;
+                color: rgba(255,255,255,0.6);
+                margin-bottom: 10px;
+            }
+            .group-detail-item p {
+                font-size: 1.3rem;
+                color: #fff;
+            }
+            @media (max-width: 1100px) {
+                .team-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            @media (max-width: 600px) {
+                .team-grid {
+                    grid-template-columns: 1fr;
+                }
+                .group-details {
+                    grid-template-columns: 1fr;
+                }
+                .team-header h1 {
+                    font-size: 2.5rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo-container">
+                <div class="row-image">
+                    <img src="pictures/fish.png" alt="Logo">
+                </div>
+                <a href="home.html" class="logo"><span><b>Ocean</b></span></a>
+            </div>
+                <ul class="menu">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Table</a></li>  
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </header>
+
+        <section class="team-section">
+            <div class="team-header">
+                <h1>Meet Our Team</h1>
+                <p>We are a group of passionate students dedicated to raising awareness about ocean conservation 
+                    and marine biodiversity through this web design coursework project.</p>
+            </div>
+
+            <div class="team-grid">
+                <!-- Student 1 - Mathushihan -->
+                <div class="team-card">
+                    <div class="team-avatar">🌊</div>
+                    <h3>Mathushihan</h3>
+                    <p class="role">Student 1</p>
+                    <p class="student-id">W2120253</p>
+                    <p>Focused on creating engaging content about the future of our oceans and volunteer opportunities.</p>
+                    <div class="pages-worked">
+                        <h4>Pages Developed:</h4>
+                        <ul>
+                            <li><a href="Splash.html">Splash Page</a></li>
+                            <li><a href="volunteer.html">Volunteer Page</a></li>
+                            <li><a href="content_ST1.html">Content - Future of Oceans</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Student 2 - Medhushiny -->
+                <div class="team-card">
+                    <div class="team-avatar">🐠</div>
+                    <h3>Medhushiny</h3>
+                    <p class="role">Student 2</p>
+                    <p class="student-id">W2120255</p>
+                    <p>Specialized in designing the core structure and conservation content of the website.</p>
+                    <div class="pages-worked">
+                        <h4>Pages Developed:</h4>
+                        <ul>
+                            <li><a href="home.html">Home Page</a></li>
+                            <li><a href="table.html">Table Page</a></li>
+                            <li><a href="content_ST2.html">Content - Conservation</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Student 3 - Sanuja -->
+                <div class="team-card">
+                    <div class="team-avatar">🐚</div>
+                    <h3>Sanuja</h3>
+                    <p class="role">Student 3</p>
+                    <p class="student-id">W2120254</p>
+                    <p>Created content about coral reefs and marine invertebrates that form the foundation of ocean ecosystems.</p>
+                    <div class="pages-worked">
+                        <h4>Pages Developed:</h4>
+                        <ul>
+                            <li><a href="profile.html">Profile Page</a></li>
+                            <li><a href="feedback.html">Feedback Page</a></li>
+                            <li><a href="content_ST3.html">Content - Corals</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Student 4 - Azeem -->
+                <div class="team-card">
+                    <div class="team-avatar">🐢</div>
+                    <h3>Azeem</h3>
+                    <p class="role">Student 4</p>
+                    <p class="student-id">W2120256</p>
+                    <p>Developed content highlighting the critical issue of plastic pollution and its impact on marine life.</p>
+                    <div class="pages-worked">
+                        <h4>Pages Developed:</h4>
+                        <ul>
+                            <li><a href="team.html">Team Page</a></li>
+                            <li><a href="sitemap.html">Sitemap Page</a></li>
+                            <li><a href="content_ST4.html">Content - Plastic Pollution</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-info">
+                <h2>Project Information</h2>
+                <div class="group-details">
+                    <div class="group-detail-item">
+                        <h3>Group</h3>
+                        <p>G20 - Subgroup 1</p>
+                    </div>
+                    <div class="group-detail-item">
+                        <h3>Project Theme</h3>
+                        <p>Ocean Conservation</p>
+                    </div>
+                    <div class="group-detail-item">
+                        <h3>Module</h3>
+                        <p>Web Design</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <p class="top"><a href="#top">Go to top</a></p>
+
+        <!--Footer section-->
+        <section class="footer">
+            <div class="footer-box">
+                <h3>Links</h3>
+                <a href="home.html">Home</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="profile.html">Profile</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <div class="footer-box">
+                <h3>About us</h3>
+                <a href="pageEditor_ST1.html">PageEditor _ST1</a>
+                <a href="pageEditor_ST2.html">PageEditor _ST2</a>
+                <a href="pageEditor_ST3.html">PageEditor _ST3</a>
+                <a href="pageEditor_ST4.html">PageEditor _ST4</a>
+            </div>
+        </section>
+    </body>
+</html>
